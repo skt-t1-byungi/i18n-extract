@@ -99,9 +99,18 @@ function getBabelOptions(parser, babelOptions) {
 }
 
 export default function extractFromCode(code, options = {}) {
-  const { marker = 'i18n', keyLoc = 0, parser = null, babelOptions = null } = options;
+  const {
+    marker = 'i18n',
+    keyLoc = 0,
+    parser = null,
+    babelOptions = null,
+    filename = null,
+  } = options;
 
-  const { ast } = transformSync(code, getBabelOptions(parser, babelOptions));
+  const { ast } = transformSync(code, {
+    ...getBabelOptions(parser, babelOptions),
+    ...(filename && { filename }),
+  });
 
   const keys = [];
   const ignoredLines = [];

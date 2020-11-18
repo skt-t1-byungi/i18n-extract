@@ -18,7 +18,7 @@ export default function extractFromFiles(filenames, options) {
 
   toScan.forEach(filename => {
     const code = fs.readFileSync(filename, 'utf8');
-    const extractedKeys = extractFromCode(code, options);
+    const extractedKeys = extractFromCode(code, { ...options, filename });
     extractedKeys.forEach(keyObj => {
       keyObj.file = filename;
       keys.push(keyObj);
