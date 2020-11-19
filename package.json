@@ -1,5 +1,5 @@
 {
-  "name": "i18n-extract",
+  "name": "@byungi/i18n-extract",
   "version": "0.6.7",
   "description": "Manage localization of ES6 code with static analysis",
   "main": "lib/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/oliviertassinari/i18n-extract.git"
+    "url": "https://github.com/skt-t1-byungi/i18n-extract.git"
   },
   "keywords": [
     "i18n",
@@ -57,5 +57,8 @@
   },
   "bugs": {
     "url": "https://github.com/oliviertassinari/i18n-extract/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
